@@ -13,7 +13,7 @@
    T stack_##T##_pop(stack_##T* s); \
    T stack_##T##_top(stack_##T* s); \
    int stack_##T##_empty(stack_##T* s);  \
-   int stack_##T##_full(stack_##T* s); \
+   int stack_##T##_full(stack_##T* s); 
 
 #define DEFINE_STACK(T,MAX_SIZE) \
    void stack_##T##_init(stack_##T* s) \

@@ -4,6 +4,7 @@
  */
 #include <stdio.h>
 #include "infix_to_postfix.h"
+#include "postfix.h"
 
 int main()
 {
@@ -11,6 +12,8 @@ int main()
   char buf[10];
 
   ITP_init(&itp);
+
+  printf("Input an expression : ");
 
   while (1) {
     scanf("%s", buf);
@@ -23,6 +26,10 @@ int main()
   }
   ITP_finish(&itp);
   ITP_print(&itp);
+
+  Q answer = solve_postfix(itp.terms, itp.terms_count);
+
+  printf("The answer is %s.\n\n", str(&answer));
 
   return 0;
 }
