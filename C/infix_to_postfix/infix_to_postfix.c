@@ -94,7 +94,7 @@ void ITP_print(ITP* itp)
         printf("(%d/%d) ", itp->terms[i].value.n, itp->terms[i].value.m);
       }
     } else {
-      printf("'%c' ", itp->terms[i].op);
+      printf("%c ", itp->terms[i].op);
     }
   }
   printf(")\n");
