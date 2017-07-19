@@ -1,5 +1,7 @@
 package net.megaroid.math;
 
+import java.util.Scanner;
+
 public class Factors {
 	
 	private int mNumber;
@@ -30,7 +32,7 @@ public class Factors {
 		
 		System.out.print("Input a number : ");
 
-		java.util.Scanner scanner = new java.util.Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		int num = scanner.nextInt();
 		scanner.close();
 		
