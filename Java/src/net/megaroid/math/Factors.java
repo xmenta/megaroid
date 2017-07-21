@@ -1,12 +1,12 @@
 package net.megaroid.math;
 
 import java.util.Scanner;
+import java.util.LinkedList;
 
 public class Factors {
 	
 	private int mNumber;
-	private int[] mFactors; 
-	private int mCount;
+	private LinkedList<Integer> mFactors;
 	
 	public Factors(int number) {
 		mNumber = number;
@@ -22,8 +22,8 @@ public class Factors {
 		}
 		
 		System.out.print("Factors: ");
-		for (int i = 0; i < mCount; i++) {
-			System.out.print(mFactors[i] + " ");;
+		for (int i : mFactors) {
+			System.out.print(i + " ");
 		}
 		System.out.println("");
  	}
@@ -31,15 +31,14 @@ public class Factors {
 	private void initialize()
 	{
 		int sqrtN = (int)Math.sqrt(mNumber);
-		mCount = 0;
 		
-		mFactors = new int[sqrtN * 2];
+		mFactors = new LinkedList<Integer>();
 		
 		for (int i = 1; i <= sqrtN; i++) {
 			if (mNumber % i == 0) {
-				mFactors[mCount++] = i;
+				mFactors.add(i);
 				if (i * i != mNumber) {
-					mFactors[mCount++] = mNumber / i;
+					mFactors.add(mNumber / i);
 				}
 			}
 		}
