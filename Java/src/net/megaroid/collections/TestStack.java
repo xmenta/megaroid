@@ -7,7 +7,7 @@ public class TestStack {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		String cmd = "";
-		IntStack stack = new IntStack();
+		Stack<Integer> stack = new Stack<Integer>();
 		
 		System.out.println("Input a command('push', 'pop', 'print', 'quit')");
 		

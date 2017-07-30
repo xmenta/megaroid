@@ -2,8 +2,8 @@ package net.megaroid.collections;
 
 public class IntStack {
 	
-	int[] data = new int[100];
-	int count = 0;
+	private int[] data = new int[100];
+	private int count = 0;
 	
 	public void push(int value) {
 		if (count >= 100) {
