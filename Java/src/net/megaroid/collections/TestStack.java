@@ -1,13 +1,14 @@
 package net.megaroid.collections;
 
 import java.util.Scanner;
+import net.megaroid.math.Rational;
 
 public class TestStack {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		String cmd = "";
-		Stack<Integer> stack = new Stack<Integer>();
+		Stack<Rational> stack = new Stack<>(); 
 		
 		System.out.println("Input a command('push', 'pop', 'print', 'quit')");
 		
@@ -16,11 +17,12 @@ public class TestStack {
 			cmd = scanner.next();
 			
 			if (cmd.equals("push")) {
-				System.out.print("Input a number: ");
-				int num = scanner.nextInt();
-				stack.push(num);
+				System.out.print("Input two numbers ( n / m ): ");
+				int n = scanner.nextInt();
+				int m = scanner.nextInt();
+				stack.push(new Rational(n, m));
 			} else if (cmd.equals("pop")) {
-				int num = stack.pop();
+				Rational num = stack.pop();
 				System.out.println("Pop a number: " + num);
 			} else if (cmd.equals("print")) {
 				System.out.println("STACK:" + stack);
