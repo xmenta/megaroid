@@ -14,8 +14,20 @@ public class PostfixCalculator {
 	
 	public void putTerm(String term) {
 		if (Character.isDigit(term.charAt(0))) {
-			int n = Integer.parseInt(term);
-			stack.push(new Rational(n));
+			int pos = term.indexOf(".");
+			if (pos == -1) {
+				int n = Integer.parseInt(term);
+				stack.push(new Rational(n));
+			} else {
+				int n1 = Integer.parseInt(term.substring(0, pos));
+				int n2 = Integer.parseInt(term.substring(pos + 1));
+				int length = term.length();
+				int m = 1;
+				for (int i = pos + 1; i < length; i++) {
+					m *= 10;
+				}
+				stack.push(new Rational(n1 * m + n2, m));
+			}
 		} else if (isOperator(term.charAt(0))) {
 			Rational r2 = stack.pop();
 			Rational r1 = stack.pop();
