@@ -61,7 +61,7 @@ public class Rational {
 	}
 	
 	public Rational add(Rational r) {
-		int gcd = GCD.gcd(m,  n);
+		int gcd = GCD.gcd(m,  r.m);
 		int m1 = m / gcd * r.m;
 		int n1 = n * (m1 / m) + r.n * (m1 / r.m);
 		Rational r1 = new Rational(n1, m1);
@@ -69,7 +69,7 @@ public class Rational {
 	}
 	
 	public Rational subtract(Rational r) {
-		int gcd = GCD.gcd(m,  n);
+		int gcd = GCD.gcd(m,  r.m);
 		int m1 = m / gcd * r.m;
 		int n1 = n * (m1 / m) - r.n * (m1 / r.m);
 		Rational r1 = new Rational(n1, m1);
